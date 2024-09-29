@@ -1,0 +1,8 @@
+＃必要ライブラリ
+library(openxlsx)
+library(dplyr)
+
+a_1 <- read.xlsx("1_A.xlsx")
+a_1_1 <- filter(a_1,trial=="A")
+sum(a_1_1$annotation == "TRUE_あか",a_1_1$annotation == "TRUE_あお",a_1_1$annotation == "TRUE_き",a_1_1$annotation == "TRUE_みどり")
+sum(a_1_1$annotation == "MISS_あか",a_1_1$annotation == "MISS_あお",a_1_1$annotation == "MISS_き",a_1_1$annotation == "MISS_みどり")
